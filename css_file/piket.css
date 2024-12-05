@@ -1,0 +1,205 @@
+/* Reset margin dan padding untuk semua elemen */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Kontainer dengan lebar maksimal 800px dan posisi tengah */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 75px;
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+}
+
+/* Tabel dengan lebar penuh */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Padding dan border untuk tabel */
+th, td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+/* Gaya baris ganjil */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Footer di bawah tabel */
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Navbar dengan efek blur dan transparansi */
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(51, 51, 51, 0.5);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    left: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    font-family: "Kanit", sans-serif;
+    font-weight: 500;
+    z-index: 3;
+}
+
+/* Styling untuk item navbar */
+li {
+    float: left;
+}
+
+/* Tampilan tautan navbar */
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease;
+}
+
+/* Efek hover pada tautan navbar */
+li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #f90000;
+    bottom: 0;
+    left: -100%;
+    transition: left 0.3s ease;
+}
+
+/* Hover efek pada navbar */
+li a:hover {
+    text-shadow: 2px 2px 5px rgba(249, 0, 0, 0.5);
+    color: #f90000;
+}
+
+/* Gaya saat hover di navbar */
+li a:hover::after {
+    left: 0;
+}
+
+/* Posisi logo navbar */
+.logo {
+    float: right;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1100;
+    cursor: pointer;
+    width: 30px;
+    height: 21px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hamburger .bar {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+}
+
+/* Media Queries untuk responsivitas */
+@media (max-width: 768px) {
+    /* Navbar untuk layar kecil */
+    .navbar {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(51, 51, 51, 0.9);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        z-index: 1500;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .navbar li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .navbar li a {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    table {
+        overflow-x: auto;
+        display: block;
+    }
+
+    th, td {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    .footer {
+        font-size: 12px;
+    }
+
+    .logo img {
+        width: 100px;
+    }
+}
